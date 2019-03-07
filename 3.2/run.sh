@@ -11,6 +11,10 @@ if [ "$JOURNALING" == "no" ]; then
     cmd="$cmd --nojournal"
 fi
 
+if [ "$WIREDTIGERCACHESIZEGB" != "" ]; then
+    cmd="$cmd --wiredTigerCacheSizeGB $WIREDTIGERCACHESIZEGB"
+fi
+
 if [ "$OPLOG_SIZE" != "" ]; then
     cmd="$cmd --oplogSize $OPLOG_SIZE"
 fi

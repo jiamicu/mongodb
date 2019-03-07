@@ -102,6 +102,14 @@ In MongoDB 3.0 there is a new environment variable `STORAGE_ENGINE` to specific 
 
 By default is "wiredTiger".
 
+Run MongoDB with a cache limit if use wiredTiger storage engine
+------------------------------------------
+
+In MongoDB 3.0 there is a new environment variable `WIREDTIGERCACHESIZEGB` to specific the mongod wiredTiger storage cache size:
+
+        docker run -d -p 27017:27017 -p 28017:28017 -e AUTH=no -e STORAGE_ENGINE=wiredTiger  WIREDTIGERCACHESIZEGB=1 tutum/mongodb:3.0
+
+By default is "60% of RAM or 1GB ".
 
 Change the default oplog size
 -----------------------------
